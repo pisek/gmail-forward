@@ -102,6 +102,10 @@ Passwords are stored directly in `application.yml`. Restrict file access to the 
 chmod 600 application.yml
 ```
 
+### Gmail App Passwords
+
+If you use Gmail as a POP3 source, generate a dedicated App Password at https://myaccount.google.com/apppasswords instead of using your main Google account password. App Passwords are single-purpose credentials that bypass 2-Step Verification and can be revoked independently without affecting your main account. If this application's config is ever compromised, you can simply revoke the App Password without changing your Google password or disrupting other services.
+
 ## Running
 
 ```bash
