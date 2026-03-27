@@ -37,13 +37,13 @@ mail-forward:
         host: pop.gmail.com
         port: 995
         username: user@gmail.com
-        password: ${GMAIL_APP_PASSWORD}
+        password: your-app-password
         ssl: true
       imap:
         host: imap.destination.com
         port: 993
         username: user@destination.com
-        password: ${DEST_PASSWORD}
+        password: your-imap-password
         ssl: true
         folder: INBOX
       polling-interval: 5m
@@ -54,13 +54,13 @@ mail-forward:
         host: pop.work.com
         port: 995
         username: worker@work.com
-        password: ${WORK_POP_PASS}
+        password: your-pop3-password
         ssl: true
       imap:
         host: imap.work.com
         port: 993
         username: worker@work.com
-        password: ${WORK_IMAP_PASS}
+        password: your-imap-password
         ssl: true
         folder: Forwarded
       polling-interval: 10m
@@ -96,18 +96,10 @@ spring:
 
 ### Passwords
 
-Avoid storing passwords in plain text. Use environment variables instead:
+Passwords are stored directly in `application.yml`. Restrict file access to the owner only:
 
 ```bash
-export GMAIL_APP_PASSWORD=your-app-password
-export DEST_PASSWORD=your-imap-password
-java -jar gmail-forward-1.0.0-SNAPSHOT.jar
-```
-
-Alternatively, point to an external config file with restricted permissions:
-
-```bash
-java -jar gmail-forward-1.0.0-SNAPSHOT.jar --spring.config.import=file:/etc/gmail-forward/secrets.yml
+chmod 600 application.yml
 ```
 
 ## Running
