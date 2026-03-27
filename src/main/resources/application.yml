@@ -5,13 +5,13 @@ mail-forward:
         host: pop.example.com
         port: 995
         username: user@example.com
-        password: ${POP3_PASSWORD}
+        password: your-pop3-password
         ssl: true
       imap:
         host: imap.example.com
         port: 993
         username: user@example.com
-        password: ${IMAP_PASSWORD}
+        password: your-imap-password
         ssl: true
         folder: INBOX
       polling-interval: 5m
