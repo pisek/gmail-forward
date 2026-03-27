@@ -1,5 +1,7 @@
 # Gmail Forward
 
+[![Build & Test](https://github.com/pisek/gmail-forward/actions/workflows/build.yml/badge.svg)](https://github.com/pisek/gmail-forward/actions/workflows/build.yml)
+
 A Spring Boot application that periodically fetches emails from POP3 servers and copies them to IMAP servers, similar to how Gmail fetches mail from external accounts. The original sender (FROM) headers are preserved.
 
 ## Features
