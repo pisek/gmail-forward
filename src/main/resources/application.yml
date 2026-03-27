@@ -1,0 +1,26 @@
+mail-forward:
+  accounts:
+    - name: "example-account"
+      pop3:
+        host: pop.example.com
+        port: 995
+        username: user@example.com
+        password: ${POP3_PASSWORD}
+        ssl: true
+      imap:
+        host: imap.example.com
+        port: 993
+        username: user@example.com
+        password: ${IMAP_PASSWORD}
+        ssl: true
+        folder: INBOX
+      polling-interval: 5m
+      delete-after-copy: false
+
+spring:
+  datasource:
+    url: jdbc:h2:file:./data/mailforward;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+  sql:
+    init:
+      mode: always
